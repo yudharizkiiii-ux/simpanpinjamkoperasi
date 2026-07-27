@@ -9,9 +9,10 @@ import SimpananPage from './pages/SimpananPage';
 import PinjamanPage from './pages/PinjamanPage';
 import AngsuranPage from './pages/AngsuranPage';
 import Laporan from './pages/Laporan';
+import Beranda from './pages/Beranda';
 
 function App() {
-  // Default user context is Admin
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [currentUser, setCurrentUser] = useState<User>(db.users[0]);
   const [currentRole, setCurrentRole] = useState<Role>(db.roles[0]);
   const [activeTab, setActiveTab] = useState<string>('dashboard');
@@ -116,6 +117,21 @@ function App() {
     }
   };
 
+  // If not logged in, render the public landing page (Beranda)
+  if (!isLoggedIn) {
+    return (
+      <Beranda 
+        onLoginSuccess={(user, role) => {
+          setCurrentUser(user);
+          setCurrentRole(role);
+          setIsLoggedIn(true);
+          // Set default tabs based on role
+          setActiveTab('dashboard');
+        }}
+      />
+    );
+  }
+
   return (
     <div className="app-container">
       <Sidebar 
@@ -127,6 +143,7 @@ function App() {
         setCurrentRole={setCurrentRole}
         isDarkTheme={isDarkTheme}
         setIsDarkTheme={setIsDarkTheme}
+        onLogout={() => setIsLoggedIn(false)}
       />
       
       <div className="main-wrapper">

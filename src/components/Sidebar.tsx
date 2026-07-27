@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   LayoutDashboard, Users, PiggyBank, HandCoins, 
-  CalendarRange, FileText, Sun, Moon
+  CalendarRange, FileText, Sun, Moon, LogOut
 } from 'lucide-react';
 import type { User, Role } from '../db/schema';
 import db from '../db/dbClient';
@@ -15,6 +15,7 @@ interface SidebarProps {
   setCurrentRole: (role: Role) => void;
   isDarkTheme: boolean;
   setIsDarkTheme: (dark: boolean) => void;
+  onLogout?: () => void;
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({
@@ -26,6 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setCurrentRole,
   isDarkTheme,
   setIsDarkTheme,
+  onLogout,
 }) => {
   // Navigation structure based on role
   const getNavItems = () => {
@@ -143,6 +145,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
           >
             {isDarkTheme ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+          
+          {onLogout && (
+            <button 
+              className="action-btn"
+              style={{ width: 36, height: 36, color: 'var(--danger)' }}
+              onClick={onLogout}
+              title="Keluar Portal"
+            >
+              <LogOut size={18} />
+            </button>
+          )}
+
           <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>v2.0.0 Stable</span>
         </div>
       </div>
