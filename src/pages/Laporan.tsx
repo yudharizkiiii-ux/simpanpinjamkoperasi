@@ -76,7 +76,7 @@ export const Laporan: React.FC<LaporanProps> = () => {
         csvContent += `${k.id},${k.tanggal},${k.jenis},"${k.sumber}",${k.nominal},${k.saldo}\n`;
       });
     } else {
-      csvContent += "NERACA SEDERHANA KOPERASI\n\n";
+      csvContent += "NERACA SEDERHANA KOPERASI INFOLAHTA SESKOAD\n\n";
       csvContent += "AKTIVA,,PASIVA,\n";
       csvContent += `Kas Koperasi,Rp ${db.currentKasSaldo},Simpanan Anggota,Rp ${totalSimpanan}\n`;
       csvContent += `Piutang Kredit Anggota,Rp ${outstandingPiutang},Modal Awal Koperasi,Rp ${modalAwal}\n`;
@@ -143,7 +143,7 @@ export const Laporan: React.FC<LaporanProps> = () => {
 
       {/* Report Header for Prints */}
       <div className="print-header" style={{ textAlign: 'center', marginBottom: 24 }}>
-        <h2 style={{ fontWeight: 800 }}>KOPERASI SIMPAN PINJAM MANDIRI</h2>
+        <h2 style={{ fontWeight: 800 }}>KOPERASI INFOLAHTA SESKOAD</h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', margin: 0 }}>Laporan Keuangan Periodik Real-time | Tanggal Cetak: {new Date().toISOString().substring(0, 10)}</p>
         <div className="divider" />
       </div>

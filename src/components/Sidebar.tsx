@@ -81,12 +81,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
       <div className="sidebar-header">
         <div style={{
           width: 36, height: 36, borderRadius: '8px', 
-          background: 'linear-gradient(135deg, var(--primary), var(--success))',
+          background: 'linear-gradient(135deg, var(--primary), var(--warning))',
           display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 800
         }}>
-          SP
+          KI
         </div>
-        <span className="sidebar-logo">SimpanPinjam</span>
+        <span className="sidebar-logo" style={{ fontSize: '1.1rem' }}>Kop Infolahta</span>
       </div>
 
       <nav className="sidebar-nav">

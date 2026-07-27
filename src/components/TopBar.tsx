@@ -13,8 +13,8 @@ export const TopBar: React.FC<TopBarProps> = ({ title }) => {
       <h1 className="page-title">{title}</h1>
       <div className="top-bar-actions">
         {/* Simplified Header Actions */}
-        <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-          Koperasi Simpan Pinjam Mandiri
+        <span style={{ fontSize: '0.9rem', fontWeight: 700, color: 'var(--primary)' }}>
+          Koperasi Infolahta Seskoad
         </span>
       </div>
     </header>

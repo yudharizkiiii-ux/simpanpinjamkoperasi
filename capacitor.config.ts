@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.koperasi.simpanpinjam',
-  appName: 'Simpan Pinjam',
+  appId: 'com.infolahta.seskoad',
+  appName: 'Koperasi Infolahta Seskoad',
   webDir: 'dist'
 };
 
